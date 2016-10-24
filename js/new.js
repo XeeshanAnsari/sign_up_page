@@ -1,7 +1,10 @@
       var imgCount = 1;
-        var total = 7 ;
+        var total = 8 ;
+        var image = document.getElementById("mainContainer");
+        image.style.backgroundColor = 'red';
+        
         function slider(x){
-            var image = document.getElementById("img");
+            var image = document.getElementById("mainContainer");
             imgCount = imgCount + x;
             if(imgCount < 1){
                 imgCount = total;
@@ -10,12 +13,13 @@
                 imgCount = 1;
             }
             else{
-                 image.src = "./image/img" + imgCount + ".jpg";
+                 var path = "./image/img" + imgCount + ".jpg";
+                 image.style.backgroundImage = url(path);
             }   
         }
         
         window.setInterval(function slideA() {
-            var image = document.getElementById("img");
+            var image = document.getElementById("mainContainer");
             imgCount = imgCount + 1;
             if(imgCount < 1){
                 imgCount = total;
@@ -24,7 +28,8 @@
                 imgCount = 1;
             }
             else{
-                 image.src = "./image/img" + imgCount + ".jpg";
+                 var path = "./image/img" + imgCount + ".jpg";
+                 image.style.backgroundImage = url(path);
             }
               
         },3000);
